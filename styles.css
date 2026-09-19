@@ -165,6 +165,78 @@ footer {
   font-size: 13px;
 }
 
+/* Publication teasers grow on hover (pointer devices only). Teasers rest at
+   235px wide but differ in height, so the zoom is capped by height (--target)
+   as well as width (--zoom-max): each figure grows until it is --target tall
+   or as wide as the window allows. Each .pub row carries --fig-h, the height
+   of its teaser at the resting 235px width.
+
+   The figure grows leftwards into the page margin. Once that margin is used
+   up, the figure and the text both move right by the same amount, so the gap
+   between them stays put and nothing reflows. */
+@media (hover: hover) {
+  .pub {
+    --target: 460;
+    --zoom-max: 1.6;
+    --zoom: min(var(--zoom-max), calc(var(--target) / var(--fig-h, 100)));
+    /* Free space next to the 888px page column, keeping a 20px window gap. */
+    --room: max(0px, (100vw - 928px) / 2);
+    /* How far the figure reaches past the left edge of the page. */
+    --reach: max(0px, 235px * var(--zoom) - 255px);
+    /* Growth the left margin cannot absorb: the figure moves right by this. */
+    --spill: max(0px, var(--reach) - var(--room));
+    /* The text follows, but never far enough to overflow the window. */
+    --slide: min(var(--spill), var(--room));
+  }
+
+  .pub-img img {
+    transform-origin: right center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .pub-img:hover img {
+    position: relative;
+    z-index: 10;
+    transform: translateX(var(--spill)) scale(var(--zoom));
+    background: #fff;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  .pub-text {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .pub-img:hover + .pub-text {
+    transform: translateX(var(--slide));
+  }
+}
+
+/* Wider windows have more room on both sides, so zoom further. */
+@media (hover: hover) and (min-width: 1200px) {
+  .pub { --zoom-max: 2.0; }
+}
+
+@media (hover: hover) and (min-width: 1400px) {
+  .pub { --zoom-max: 2.7; }
+}
+
+@media (hover: hover) and (min-width: 1600px) {
+  .pub { --zoom-max: 3.4; }
+}
+
+@media (hover: hover) and (min-width: 1800px) {
+  .pub { --zoom-max: 4.0; }
+}
+
+/* Taller windows can fit a taller figure. */
+@media (hover: hover) and (min-height: 900px) {
+  .pub { --target: 560; }
+}
+
+@media (hover: hover) and (min-height: 1200px) {
+  .pub { --target: 680; }
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;

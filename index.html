@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <main>
@@ -58,7 +58,7 @@
         <a href="https://scholar.google.com/citations?user=dN6uh28AAAAJ&amp;hl=en">Google Scholar</a>.
       </p>
 
-      <div class="pub">
+      <div class="pub" style="--fig-h: 118">
         <a class="pub-img" href="assets/anystyle.jpg">
           <img src="assets/anystyle.jpg" alt="AnyStyle teaser: scenes stylized from text prompts and reference images" loading="lazy">
         </a>
@@ -71,7 +71,7 @@
         </div>
       </div>
 
-      <div class="pub">
+      <div class="pub" style="--fig-h: 88">
         <a class="pub-img" href="assets/lumimotion.jpg">
           <img src="assets/lumimotion.jpg" alt="LumiMotion teaser: a dynamic scene relit under several novel lighting conditions" loading="lazy">
         </a>
@@ -84,20 +84,20 @@
         </div>
       </div>
 
-      <div class="pub">
+      <div class="pub" style="--fig-h: 91">
         <a class="pub-img" href="assets/lumigauss.jpg">
           <img src="assets/lumigauss.jpg" alt="LumiGauss teaser: reconstruction, albedo, normals, and novel lighting of an outdoor scene" loading="lazy">
         </a>
         <div class="pub-text">
-          <a class="pub-title" href="https://lumigauss.github.io/">LumiGauss: Relightable Gaussian Splatting in the Wild</a>
+          <a class="pub-title" href="https://arxiv.org/abs/2408.04474">LumiGauss: Relightable Gaussian Splatting in the Wild</a>
           <p class="pub-authors"><strong>Joanna Kaleta</strong>, Kacper Kania, Tomasz Trzciński, Marek Kowalski</p>
           <p class="pub-venue">WACV 2025 <span class="distinction">Oral</span></p>
           <p class="pub-desc">Relightable Gaussian Splatting from unconstrained photo collections, using precomputed radiance transfer.</p>
-          <p class="pub-links"><a href="https://lumigauss.github.io/">project page</a> · <a href="https://arxiv.org/abs/2408.04474">paper</a> · <a href="https://github.com/joaxkal/lumigauss">code</a></p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2408.04474">paper</a> · <a href="https://github.com/joaxkal/lumigauss">code</a></p>
         </div>
       </div>
 
-      <div class="pub">
+      <div class="pub" style="--fig-h: 56">
         <a class="pub-img" href="assets/pr-endo.jpg">
           <img src="assets/pr-endo.jpg" alt="PR-ENDO teaser: relightable 3D reconstruction of a colon from colonoscopy video" loading="lazy">
         </a>
@@ -110,7 +110,7 @@
         </div>
       </div>
 
-      <div class="pub">
+      <div class="pub" style="--fig-h: 75">
         <a class="pub-img" href="assets/d-miso.jpg">
           <img src="assets/d-miso.jpg" alt="D-MiSo teaser: editable dynamic 3D object represented with multi-Gaussian soup" loading="lazy">
         </a>
@@ -123,7 +123,7 @@
         </div>
       </div>
 
-      <div class="pub">
+      <div class="pub" style="--fig-h: 104">
         <a class="pub-img" href="assets/sim2real_asset.jpg">
           <img src="assets/sim2real_asset.jpg" alt="Simulator renders translated into realistic endoscopic images" loading="lazy">
         </a>
@@ -266,18 +266,28 @@
 
     document.querySelectorAll('.pub-img').forEach((anchor) => {
       anchor.addEventListener('click', (event) => {
-        event.preventDefault();
-        const thumb = anchor.querySelector('img');
-        lightboxImg.src = anchor.href;
-        lightboxImg.alt = thumb ? thumb.alt : '';
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        try {
+          const thumb = anchor.querySelector('img');
+          lightboxImg.src = anchor.href;
+          lightboxImg.alt = thumb ? thumb.alt : '';
+          lightbox.classList.add('open');
+          if (getComputedStyle(lightbox).display === 'flex') {
+            // Overlay is styled and visible: hijack the click.
+            event.preventDefault();
+            document.body.style.overflow = 'hidden';
+          } else {
+            // Stylesheet missing/stale: fall back to opening the image directly.
+            lightbox.classList.remove('open');
+          }
+        } catch (err) {
+          // Any failure: let the browser follow the link to the image file.
+        }
       });
     });
 
     function closeLightbox() {
       lightbox.classList.remove('open');
-      lightboxImg.src = '';
+      lightboxImg.removeAttribute('src');
       document.body.style.overflow = '';
     }
 
