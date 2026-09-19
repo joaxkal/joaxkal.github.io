@@ -59,7 +59,7 @@
       </p>
 
       <div class="pub">
-        <a class="pub-img" href="https://anystyle3dgs.github.io/">
+        <a class="pub-img" href="assets/anystyle.jpg">
           <img src="assets/anystyle.jpg" alt="AnyStyle teaser: scenes stylized from text prompts and reference images" loading="lazy">
         </a>
         <div class="pub-text">
@@ -72,7 +72,7 @@
       </div>
 
       <div class="pub">
-        <a class="pub-img" href="https://joaxkal.github.io/LumiMotion/">
+        <a class="pub-img" href="assets/lumimotion.jpg">
           <img src="assets/lumimotion.jpg" alt="LumiMotion teaser: a dynamic scene relit under several novel lighting conditions" loading="lazy">
         </a>
         <div class="pub-text">
@@ -85,7 +85,7 @@
       </div>
 
       <div class="pub">
-        <a class="pub-img" href="https://lumigauss.github.io/">
+        <a class="pub-img" href="assets/lumigauss.jpg">
           <img src="assets/lumigauss.jpg" alt="LumiGauss teaser: reconstruction, albedo, normals, and novel lighting of an outdoor scene" loading="lazy">
         </a>
         <div class="pub-text">
@@ -98,7 +98,7 @@
       </div>
 
       <div class="pub">
-        <a class="pub-img" href="https://sanoscience.github.io/PR-ENDO/">
+        <a class="pub-img" href="assets/pr-endo.jpg">
           <img src="assets/pr-endo.jpg" alt="PR-ENDO teaser: relightable 3D reconstruction of a colon from colonoscopy video" loading="lazy">
         </a>
         <div class="pub-text">
@@ -111,7 +111,7 @@
       </div>
 
       <div class="pub">
-        <a class="pub-img" href="https://waczjoan.github.io/D-MiSo/">
+        <a class="pub-img" href="assets/d-miso.jpg">
           <img src="assets/d-miso.jpg" alt="D-MiSo teaser: editable dynamic 3D object represented with multi-Gaussian soup" loading="lazy">
         </a>
         <div class="pub-text">
@@ -124,7 +124,7 @@
       </div>
 
       <div class="pub">
-        <a class="pub-img" href="https://doi.org/10.1007/s11548-023-03030-w">
+        <a class="pub-img" href="assets/sim2real_asset.jpg">
           <img src="assets/sim2real_asset.jpg" alt="Simulator renders translated into realistic endoscopic images" loading="lazy">
         </a>
         <div class="pub-text">
@@ -255,5 +255,36 @@
     </footer>
 
   </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.pub-img').forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        event.preventDefault();
+        const thumb = anchor.querySelector('img');
+        lightboxImg.src = anchor.href;
+        lightboxImg.alt = thumb ? thumb.alt : '';
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>

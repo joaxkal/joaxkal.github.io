@@ -87,6 +87,7 @@ section { margin-bottom: 44px; }
 .pub-img {
   flex-shrink: 0;
   width: 235px;
+  cursor: zoom-in;
 }
 
 .pub-img img {
@@ -162,6 +163,31 @@ footer {
   border-top: 1px solid var(--rule);
   color: var(--muted);
   font-size: 13px;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(15, 15, 15, 0.85);
+  cursor: zoom-out;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: min(1500px, 95vw);
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* Mobile */
