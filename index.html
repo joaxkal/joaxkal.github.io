@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Joanna Kaleta — PhD researcher in computer vision: 3D reconstruction, Gaussian Splatting, neural rendering, and generative models.">
+  <title>Joanna Kaleta</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23444'/><text x='32' y='43' font-family='Helvetica' font-size='28' fill='white' text-anchor='middle'>JK</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+
+    <!-- Intro -->
+    <section class="intro">
+      <div class="intro-text">
+        <h1>Joanna Kaleta</h1>
+        <p>
+          I am a PhD researcher in computer vision at
+          <a href="https://www.pw.edu.pl/">Warsaw University of Technology</a> and the
+          <a href="https://sano.science/">Sano Centre for Computational Personalized Medicine</a>,
+          supervised by Prof. <a href="https://scholar.google.com/citations?user=bJMRBFoAAAAJ&amp;hl=en">Tomasz Trzciński</a>
+          and Dr <a href="https://scholar.google.com/citations?user=n137ACEAAAAJ&amp;hl=en">Marek Kowalski</a>.
+          I am currently a visiting PhD researcher in the
+          <a href="https://gruvi.cs.sfu.ca/">GrUVi Lab</a> at Simon Fraser University, hosted by
+          <a href="https://taiya.github.io/">Andrea Tagliasacchi</a>.
+          Earlier in 2026, I visited the
+          <a href="https://cvg.ethz.ch/">Computer Vision and Geometry group</a> at ETH Zürich, hosted by
+          <a href="https://people.inf.ethz.ch/pomarc/">Marc Pollefeys</a>.
+        </p>
+        <p>
+          I work on combining 3D spatial representations with generative models to reconstruct,
+          understand, and generate spatially faithful 3D scenes. My research spans feed-forward
+          3D reconstruction, Gaussian Splatting, neural rendering, diffusion models, and
+          video-based scene representations.
+        </p>
+        <p class="links">
+          <a href="mailto:joannakaletaa@gmail.com">Email</a> /
+          <a href="Joanna_Kaleta_CV.pdf">CV</a> /
+          <a href="https://scholar.google.com/citations?user=dN6uh28AAAAJ&amp;hl=en">Google Scholar</a> /
+          <a href="https://github.com/joaxkal">GitHub</a> /
+          <a href="https://www.linkedin.com/in/joanna-kaleta/">LinkedIn</a>
+        </p>
+      </div>
+      <div class="intro-photo">
+        <img src="assets/profile.jpg" alt="Portrait of Joanna Kaleta">
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section>
+      <h2>Publications</h2>
+      <p class="section-note">
+        Selected publications — the full list is on
+        <a href="https://scholar.google.com/citations?user=dN6uh28AAAAJ&amp;hl=en">Google Scholar</a>.
+      </p>
+
+      <div class="pub">
+        <a class="pub-img" href="https://anystyle3dgs.github.io/">
+          <img src="assets/anystyle.jpg" alt="AnyStyle teaser: scenes stylized from text prompts and reference images" loading="lazy">
+        </a>
+        <div class="pub-text">
+          <a class="pub-title" href="https://anystyle3dgs.github.io/">AnyStyle: Single-Pass Multimodal Stylization for 3D Gaussian Splatting</a>
+          <p class="pub-authors"><strong>Joanna Kaleta</strong>, Bartosz Świrta, Kacper Kania, Tomasz Trzciński, Przemysław Spurek, Marek Kowalski</p>
+          <p class="pub-venue">ACM Multimedia 2026</p>
+          <p class="pub-desc">Feed-forward, pose-free 3D reconstruction and zero-shot stylization with text or image conditioning.</p>
+          <p class="pub-links"><a href="https://anystyle3dgs.github.io/">project page</a> · <a href="https://arxiv.org/abs/2602.04043">paper</a> · <a href="https://github.com/joaxkal/AnyStyle">code</a></p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <a class="pub-img" href="https://joaxkal.github.io/LumiMotion/">
+          <img src="assets/lumimotion.jpg" alt="LumiMotion teaser: a dynamic scene relit under several novel lighting conditions" loading="lazy">
+        </a>
+        <div class="pub-text">
+          <a class="pub-title" href="https://joaxkal.github.io/LumiMotion/">LumiMotion: Improving Gaussian Relighting with Scene Dynamics</a>
+          <p class="pub-authors"><strong>Joanna Kaleta</strong>*, Piotr Wójcik*, Kacper Marzol, Tomasz Trzciński, Kacper Kania, Marek Kowalski</p>
+          <p class="pub-venue">CVPR 2026 <span class="distinction">Highlight</span></p>
+          <p class="pub-desc">Scene motion as an additional supervisory signal for disentangling material properties from global illumination.</p>
+          <p class="pub-links"><a href="https://joaxkal.github.io/LumiMotion/">project page</a> · <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Kaleta_LumiMotion_Improving_Gaussian_Relighting_with_Scene_Dynamics_CVPR_2026_paper.html">paper</a> · <a href="https://github.com/joaxkal/LumiMotion">code</a></p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <a class="pub-img" href="https://lumigauss.github.io/">
+          <img src="assets/lumigauss.jpg" alt="LumiGauss teaser: reconstruction, albedo, normals, and novel lighting of an outdoor scene" loading="lazy">
+        </a>
+        <div class="pub-text">
+          <a class="pub-title" href="https://lumigauss.github.io/">LumiGauss: Relightable Gaussian Splatting in the Wild</a>
+          <p class="pub-authors"><strong>Joanna Kaleta</strong>, Kacper Kania, Tomasz Trzciński, Marek Kowalski</p>
+          <p class="pub-venue">WACV 2025 <span class="distinction">Oral</span></p>
+          <p class="pub-desc">Relightable Gaussian Splatting from unconstrained photo collections, using precomputed radiance transfer.</p>
+          <p class="pub-links"><a href="https://lumigauss.github.io/">project page</a> · <a href="https://arxiv.org/abs/2408.04474">paper</a> · <a href="https://github.com/joaxkal/lumigauss">code</a></p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <a class="pub-img" href="https://sanoscience.github.io/PR-ENDO/">
+          <img src="assets/pr-endo.jpg" alt="PR-ENDO teaser: relightable 3D reconstruction of a colon from colonoscopy video" loading="lazy">
+        </a>
+        <div class="pub-text">
+          <a class="pub-title" href="https://sanoscience.github.io/PR-ENDO/">PR-ENDO: Physically Based Relightable Gaussian Splatting for Endoscopy</a>
+          <p class="pub-authors"><strong>Joanna Kaleta</strong>*, Weronika Smolak-Dyżewska*, Dawid Malarz, Diego Dall'Alba, Przemysław Korzeniowski, Przemysław Spurek</p>
+          <p class="pub-venue">MICCAI 2025</p>
+          <p class="pub-desc">Relightable Gaussian Splatting for colonoscopy, exploiting the co-location of camera and light source.</p>
+          <p class="pub-links"><a href="https://sanoscience.github.io/PR-ENDO/">project page</a> · <a href="https://arxiv.org/abs/2411.12510">paper</a> · <a href="https://github.com/SanoScience/PR-ENDO">code</a></p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <a class="pub-img" href="https://waczjoan.github.io/D-MiSo/">
+          <img src="assets/d-miso.jpg" alt="D-MiSo teaser: editable dynamic 3D object represented with multi-Gaussian soup" loading="lazy">
+        </a>
+        <div class="pub-text">
+          <a class="pub-title" href="https://waczjoan.github.io/D-MiSo/">D-MiSo: Editing Dynamic 3D Scenes Using Multi-Gaussians Soup</a>
+          <p class="pub-authors">Joanna Waczyńska, Piotr Borycki, <strong>Joanna Kaleta</strong>, Sławomir Tadeja, Przemysław Spurek</p>
+          <p class="pub-venue">NeurIPS 2024</p>
+          <p class="pub-desc">A hierarchical, editable Gaussian Splatting representation for dynamic 3D scenes.</p>
+          <p class="pub-links"><a href="https://waczjoan.github.io/D-MiSo/">project page</a> · <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/c32319f4868da7613d78af9993100e42-Paper-Conference.pdf">paper</a> · <a href="https://github.com/waczjoan/D-MiSo">code</a></p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <a class="pub-img" href="https://doi.org/10.1007/s11548-023-03030-w">
+          <img src="assets/sim2real_asset.jpg" alt="Simulator renders translated into realistic endoscopic images" loading="lazy">
+        </a>
+        <div class="pub-text">
+          <a class="pub-title" href="https://doi.org/10.1007/s11548-023-03030-w">Minimal Data Requirement for Realistic Endoscopic Image Generation with Stable Diffusion</a>
+          <p class="pub-authors"><strong>Joanna Kaleta</strong>, Diego Dall'Alba, Szymon Płotka, Przemysław Korzeniowski</p>
+          <p class="pub-venue">NeurIPS 2023 Workshop on Diffusion Models <span class="distinction">NVIDIA Best Student Paper Award</span></p>
+          <p class="pub-desc">Medical Sim2Real: generating fully annotated, realistic endoscopic data from medical-simulator renders. Extended version published in IJCARS.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1007/s11548-023-03030-w">paper</a> · <a href="https://github.com/SanoScience/sim2real_with_Stable_Diffusion">code</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2>Research experience</h2>
+      <div class="row">
+        <div class="row-date">08/2026 – present</div>
+        <div class="row-body">
+          <strong>Simon Fraser University, GrUVi Lab</strong> — Visiting PhD Researcher, hosted by Andrea Tagliasacchi.
+          Generative video models for regenerating videos under spatial scene edits and structural changes.
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">02/2026 – 05/2026</div>
+        <div class="row-body">
+          <strong>ETH Zürich, Computer Vision and Geometry group</strong> — Visiting PhD Researcher, hosted by Marc Pollefeys.
+          Feed-forward 3D reconstruction with test-time optimization and error-based recurrent refinement.
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">09/2023 – present</div>
+        <div class="row-body">
+          <strong>Warsaw University of Technology</strong> — PhD Student, Doctoral School, supervised by Prof. Tomasz Trzciński and Dr Marek Kowalski.
+          Gaussian Splatting, neural rendering, dynamic scenes, relighting, 3D reconstruction, and generative vision models.
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">10/2022 – present</div>
+        <div class="row-body">
+          <strong>Sano Centre for Computational Personalized Medicine</strong> — PhD Researcher.
+          Computer vision and generative modeling for medical imaging, endoscopy, and robotics-oriented applications.
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section>
+      <h2>Awards &amp; grants</h2>
+      <div class="row">
+        <div class="row-date">2023</div>
+        <div class="row-body"><strong>NVIDIA Best Student Paper Award</strong> — NeurIPS Workshop on Diffusion Models.</div>
+      </div>
+      <div class="row">
+        <div class="row-date">2023</div>
+        <div class="row-body"><strong>1st place, MICCAI PitVis Challenge</strong> — surgical instrument recognition in endoscopic pituitary surgery (<a href="https://www.sciencedirect.com/science/article/pii/S1361841525002634">challenge report</a>).</div>
+      </div>
+      <div class="row">
+        <div class="row-date">2023 – 2027</div>
+        <div class="row-body">Researcher in the NCN PRELUDIUM BIS grant <em>“Towards Real-Time Volumetric 3D Reconstruction for Videos”</em>.</div>
+      </div>
+      <div class="row">
+        <div class="row-date">2026</div>
+        <div class="row-body">NAWA scholarship funding the research visit at Simon Fraser University.</div>
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section>
+      <h2>Teaching &amp; service</h2>
+      <div class="row">
+        <div class="row-date">Teaching</div>
+        <div class="row-body">
+          <strong>Rendering and Animation Techniques</strong> — lab classes covering Blender fundamentals,
+          3D modeling, rendering, and animation, with practical exercises on building simple scenes.
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">Teaching</div>
+        <div class="row-body">
+          <strong>Introduction to Artificial Neural Networks</strong> — labs with mini-lectures on machine
+          learning foundations: MLPs, backpropagation, recurrent networks, generative models, and LLMs.
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">Reviewing</div>
+        <div class="row-body">Reviewer for computer vision and machine learning conferences.</div>
+      </div>
+    </section>
+
+    <!-- Industry experience -->
+    <section>
+      <h2>Industry experience</h2>
+      <div class="row">
+        <div class="row-date">05/2022 – 09/2022</div>
+        <div class="row-body">
+          <strong>Appsilon</strong> — Machine Learning Engineer.
+          Image classification and object detection in Data4Good wildlife-protection projects; GAN-based human motion style transfer.
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-date">10/2020 – 04/2022</div>
+        <div class="row-body">
+          <strong>RedCompass Labs</strong> — Data Scientist.
+          Anomaly detection, clustering, graph analysis, NLP, and Spark pipelines for anti-modern-slavery financial intelligence.
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <div class="row">
+        <div class="row-date">2023 – present</div>
+        <div class="row-body"><strong>PhD in Computer Science</strong>, Warsaw University of Technology, Doctoral School.</div>
+      </div>
+      <div class="row">
+        <div class="row-date">2021</div>
+        <div class="row-body"><strong>MSc in Computer Science</strong>, Warsaw University of Technology — graduated with distinction.</div>
+      </div>
+      <div class="row">
+        <div class="row-date">Erasmus</div>
+        <div class="row-body">Exchange semesters at the Polytechnic University of Catalonia and the University of Vienna.</div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Joanna Kaleta</p>
+    </footer>
+
+  </main>
+</body>
+</html>

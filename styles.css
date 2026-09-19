@@ -1,0 +1,192 @@
+:root {
+  --text: #333;
+  --muted: #777;
+  --link: #1772d0;
+  --accent: #b03434;
+  --rule: #e8e8e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 56px 24px 40px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+h1 {
+  margin: 0 0 18px;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+section { margin-bottom: 44px; }
+
+/* Intro */
+.intro {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.intro-text { flex: 1; }
+.intro-text p { margin: 0 0 14px; }
+
+.links { font-weight: 700; }
+
+.intro-photo {
+  flex-shrink: 0;
+  width: 185px;
+}
+
+.intro-photo img {
+  width: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Publications */
+.section-note {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pub {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.pub-img {
+  flex-shrink: 0;
+  width: 235px;
+}
+
+.pub-img img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+.pub-text { min-width: 0; }
+
+.pub-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.pub-text p { margin: 4px 0 0; }
+
+.pub-authors { font-size: 14px; }
+.pub-authors strong { font-weight: 700; }
+
+.pub-venue {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.distinction {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 9px;
+  background: #fdeeee;
+  border: 1px solid #efc7c7;
+  border-radius: 999px;
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.5px;
+  vertical-align: 1px;
+}
+
+.pub-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+.pub-links {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Generic date/body rows (experience, teaching, awards, education) */
+.row {
+  display: flex;
+  gap: 22px;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+}
+
+section > .row:first-of-type { margin-top: 14px; }
+
+.row-date {
+  flex-shrink: 0;
+  width: 140px;
+  color: var(--muted);
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+.row-body { min-width: 0; }
+
+footer {
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  main { padding: 36px 18px; }
+
+  .intro {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .intro-photo { width: 150px; }
+
+  .pub {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .pub-img { width: 100%; }
+
+  .row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .row-date { width: auto; }
+}
