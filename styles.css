@@ -79,6 +79,15 @@ section { margin-bottom: 44px; }
   font-size: 14px;
 }
 
+.publication-group { margin-bottom: 30px; }
+.publication-group:last-child { margin-bottom: 0; }
+
+.publication-group h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
 .pub {
   display: flex;
   gap: 26px;
